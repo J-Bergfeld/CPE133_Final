@@ -28,13 +28,13 @@ module Rand_Num(
     
     always_ff @(posedge CLK)
     begin
-    if(EN)
+    if(EN) // Checks EN signal
     begin
-        D = $urandom_range(0,9);
+        D = $urandom_range(0,9); // assigns a random number from 0 to 9 to D
     end
     else
     begin
-        D = 0;
+        D = 0; // if no signal, outputs 0
     end 
     end
     

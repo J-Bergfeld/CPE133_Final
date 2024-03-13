@@ -25,6 +25,7 @@ module BCD2BIN(
     output logic [13:0] OUT
     );
     always_comb begin
+    // adds the first 4 bits then the second 4 multiplied by 10 and so on as assigns to OUT
     assign OUT = IN[3:0] + IN[7:4] * 10 + IN[11:8] * 100 + IN[15:12] * 1000;
     end
     
