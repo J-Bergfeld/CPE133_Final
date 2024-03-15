@@ -21,21 +21,14 @@
 
 
 module Rand_Num(
-    input EN,CLK,
+    input CLK,
     output logic [3:0] D
     );
     logic [3:0] random;
     
     always_ff @(posedge CLK)
     begin
-    if(EN) // Checks EN signal
-    begin
         D = $urandom_range(0,9); // assigns a random number from 0 to 9 to D
-    end
-    else
-    begin
-        D = 0; // if no signal, outputs 0
-    end 
     end
     
     
